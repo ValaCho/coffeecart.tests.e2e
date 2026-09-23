@@ -50,7 +50,9 @@ test('validate cart functionality', async ({ page }) => {
   await expect(page.locator('[href="/cart"]')).toContainText('cart (1)');
 
   await page.locator('[href="/cart"]').click();
-  await page.locator('li.list-item:nth-child(2) button[aria-label="Add one Cappuccino"]').click();
+  await page.locator(
+    '//ul[not(contains(@class, "cart-preview"))]//button[@aria-label="Add one Cappuccino"]'
+  ).click();
   await expect(page.locator('[href="/cart"]')).toContainText('cart (2)');
 
   await page.locator('[class="delete"]').click();
