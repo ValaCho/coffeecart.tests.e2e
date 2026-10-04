@@ -30,3 +30,4 @@ test("check voting for 19 age", () => {
 test("check voting for 35 age", () => {
     expect(votingOportunities(35)).toBe("Ви можете голосувати.");
 });
+
